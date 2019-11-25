@@ -1,23 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import BlogList from './modules/blog/blogList';
+import {useRoutes, A} from 'hookrouter';
+
+
+const routes = {
+  '/blog': () => BlogList();
+
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <A href='/blog'>Blog </A>
+
+        <BlogList/>
       </header>
     </div>
   );
